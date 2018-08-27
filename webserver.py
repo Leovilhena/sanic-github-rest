@@ -2,6 +2,7 @@ import aiohttp
 from sanic import Sanic
 from sanic.response import text
 from sanic.exceptions import ServerError, NotFound
+from multiprocessing import cpu_count
 from helpers import *
 
 # -------------------------------------------------------------------- #
@@ -76,8 +77,13 @@ def standard_error(request, exception):
 
 
 if __name__ == "__main__":
+
+    host = HOST
+    port = int(PORT)
+    workers = cpu_count()
+
     APP.run(
-        host=HOST,
-        port=PORT,
-        workers=WORKERS
+        host=host,
+        port=port,
+        workers=workers,
     )

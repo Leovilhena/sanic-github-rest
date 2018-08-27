@@ -1,5 +1,4 @@
 import os
-from multiprocessing import cpu_count
 
 # -------------------------------------------------------------------- #
 # Request variables
@@ -20,5 +19,4 @@ GITHUB_USER = os.environ.get('USER', '')
 # -------------------------------------------------------------------- #
 
 HOST = os.environ.get('HOST', '0.0.0.0')
-PORT = os.environ.get('PORT', 8000)
-WORKERS = cpu_count()
+PORT = os.environ.get('PORT', 80)
